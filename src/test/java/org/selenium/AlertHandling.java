@@ -18,27 +18,31 @@ public class AlertHandling {
 		WebDriver driver = new ChromeDriver();
 		driver.navigate().to("https://www.leafground.com/alert.xhtml;jsessionid=node07pmr9jmiactu184w46l2fnyd2374600.node0");
 		// navigate option is used to refresh, forward, backward the current browser we cant do this in driver.get() method
+		
+		//To handle the alert have to switch to alert by using alert interface
 		WebElement simpleAlert = 	driver.findElement(By.id("j_idt88:j_idt91"));
 		simpleAlert.click();
-		//To handle the alert have to switch to alert by using alert interface
 		Alert acceptSimpleAlert = driver.switchTo().alert();
 		acceptSimpleAlert.accept();
+		
 		WebElement confirmAlert = driver.findElement(By.id("j_idt88:j_idt93"));
 		confirmAlert.click();
 		Alert cancelConfirmAlert = driver.switchTo().alert();
 		cancelConfirmAlert.dismiss();
+		
 		WebElement promptAlert = driver.findElement(By.id("j_idt88:j_idt104"));
 		promptAlert.click();
 		Alert textPromptAlert = driver.switchTo().alert();
 		textPromptAlert.sendKeys("Handling Alert");
 		textPromptAlert.accept();
+		
 		WebElement DeleteAlert = driver.findElement(By.id("j_idt88:j_idt106"));
 		confirmAlert.click();
 		Alert yesAlert = driver.switchTo().alert();
 		cancelConfirmAlert.accept();
 
-		WebElement cancelAlert = driver.findElement(By.id("j_idt88:j_idt95"));
-		cancelAlert.click();
+		WebElement sweetAlert = driver.findElement(By.id("j_idt88:j_idt95"));
+		sweetAlert.click();
 		Actions a = new Actions(driver);
 		WebElement close = driver.findElement(By.id("j_idt88:j_idt98"));
 		a.moveToElement(close);
